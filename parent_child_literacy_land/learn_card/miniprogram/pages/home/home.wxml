@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="logo-area">
+    <text class="title">场景识字*父母伴读</text>
+    <text class="subtitle">在场景里陪伴孩子识字</text>
+  </view>
+  
+  <!-- 这个按钮点击后，才会跳转到大象页 -->
+  <button class="start-btn" bindtap="startRandom">随机抽取场景开始识字</button>
+</view>

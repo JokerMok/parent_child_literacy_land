@@ -1,0 +1,17 @@
+<view class="container">
+  <!-- 背景图片 -->
+  <image src="/images/zoo.jpg" class="background-image" mode="aspectFit"></image>
+  
+  <!-- 循环渲染点击区域 -->
+  <view 
+    wx:for="{{clickAreas}}" 
+    wx:key="index"
+    class="clickable-area"
+    style="left: {{item.rect[0] * 100}}%; top: {{item.rect[1] * 100}}%; width: {{item.rect[2] * 100}}%; height: {{item.rect[3] * 100}}%;"
+    data-index="{{index}}"
+    bind:tap="onAreaClick"
+  >
+    <!-- 可选：显示文字标签（调试用） -->
+    <text class="area-label">{{item.text}}</text>
+  </view>
+</view>

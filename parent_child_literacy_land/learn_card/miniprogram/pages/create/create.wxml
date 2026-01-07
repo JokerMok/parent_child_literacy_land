@@ -1,0 +1,64 @@
+<view class="container">
+  <!-- 1. 画布区域 -->
+  <movable-area class="canvas-area" style="height: {{imgInfo.height}}px">
+    
+    <!-- 提示文案 (没图的时候显示) -->
+    <view class="placeholder-box" wx:if="{{!tempImagePath}}">
+      <image src="/assets/icons/home_active.png" mode="widthFix" style="width:80rpx; opacity:0.3;"></image>
+      <text>等待上传图片...</text>
+    </view>
+
+    <!-- 背景图 -->
+    <image src="{{tempImagePath}}" class="bg-img" mode="widthFix" bindload="onImgLoad"></image>
+    
+    <!-- 框框 -->
+    <movable-view 
+      wx:for="{{hotspots}}" 
+      wx:key="index"
+      class="rect-box"
+      direction="all" 
+      scale="{{true}}" 
+      scale-min="0.2" 
+      scale-max="5"
+      x="{{item.rect[0] * imgInfo.width}}"
+      y="{{item.rect[1] * imgInfo.height}}"
+      style="width: {{item.rect[2] * imgInfo.width}}px; height: {{item.rect[3] * imgInfo.height}}px;"
+      bindchange="onBoxMove"
+      bindscale="onBoxScale"
+      data-index="{{index}}"
+    >
+      <view class="tag-group" catchtap="editTag" data-index="{{index}}">
+        <view class="pinyin" wx:if="{{item.pinyin}}">{{item.pinyin}}</view>
+        <view class="hanzi">{{item.text}}</view>
+      </view>
+      
+      <!-- 🔥 找回的删除按钮 -->
+      <view class="del-btn" catchtap="deleteBox" data-index="{{index}}">×</view>
+    </movable-view>
+  </movable-area>
+
+  <!-- 2. 底部操作栏 -->
+  <view class="footer-bar">
+    <!-- 情况A：没上传图 -> 显示居中的上传按钮 -->
+    <view class="center-action" wx:if="{{!serverImageUrl}}">
+      <view class="upload-btn-large" bindtap="chooseImage">
+        <text>📷 上传图片</text>
+      </view>
+    </view>
+    
+    <!-- 情况B：已上传 -> 显示两侧操作 -->
+    <block wx:else>
+      <view class="left-action">
+        <view class="text-btn" bindtap="startAddBox">手动加框</view>
+      </view>
+      <view class="right-action">
+        <view class="save-btn" bindtap="submitToServer">完成保存</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 编辑弹窗 -->
+  <modal hidden="{{!isEditing}}" title="修改内容" confirm-text="确定" cancel-text="取消" bindconfirm="confirmText" bindcancel="cancelText">
+    <input class="input" placeholder="输入名称" bindinput="onInputText" value="{{currentText}}"/>
+  </modal>
+</view>

@@ -1,0 +1,952 @@
+{
+  "gongdi": [
+    {
+      "text": "吊车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/吊车.mp3",
+      "rect": [
+        0.0935,
+        0.3463,
+        0.129,
+        0.0354
+      ]
+    },
+    {
+      "text": "推土机",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/推土机.mp3",
+      "rect": [
+        0.0511,
+        0.4223,
+        0.1487,
+        0.0354
+      ]
+    },
+    {
+      "text": "沙子堆",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/沙子堆.mp3",
+      "rect": [
+        0.0624,
+        0.6363,
+        0.1373,
+        0.0354
+      ]
+    },
+    {
+      "text": "工地",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/工地.mp3",
+      "rect": [
+        0.4549,
+        0.6563,
+        0.1092,
+        0.0354
+      ]
+    },
+    {
+      "text": "安全帽",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/安全帽.mp3",
+      "rect": [
+        0.4529,
+        0.7253,
+        0.1113,
+        0.0354
+      ]
+    },
+    {
+      "text": "围栏",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/围栏.mp3",
+      "rect": [
+        0.5746,
+        0.7953,
+        0.1248,
+        0.0354
+      ]
+    },
+    {
+      "text": "砖块",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/砖块.mp3",
+      "rect": [
+        0.0614,
+        0.8793,
+        0.1331,
+        0.0354
+      ]
+    },
+    {
+      "text": "小房子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小房子.mp3",
+      "rect": [
+        0.8173,
+        0.3193,
+        0.1394,
+        0.0354
+      ]
+    },
+    {
+      "text": "卡车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/卡车.mp3",
+      "rect": [
+        0.8446,
+        0.4653,
+        0.1227,
+        0.0354
+      ]
+    },
+    {
+      "text": "轮子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/轮子.mp3",
+      "rect": [
+        0.8446,
+        0.8793,
+        0.1227,
+        0.0354
+      ]
+    }
+  ],
+  "gouwuche": [
+    {
+      "text": "牛奶",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/牛奶.mp3",
+      "rect": [
+        0.184,
+        0.3443,
+        0.103,
+        0.0354
+      ]
+    },
+    {
+      "text": "货架",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/货架.mp3",
+      "rect": [
+        0.3881,
+        0.3793,
+        0.0998,
+        0.0354
+      ]
+    },
+    {
+      "text": "苹果",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/苹果.mp3",
+      "rect": [
+        0.1621,
+        0.4713,
+        0.0988,
+        0.0354
+      ]
+    },
+    {
+      "text": "面包",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/面包.mp3",
+      "rect": [
+        0.2961,
+        0.4713,
+        0.0998,
+        0.0354
+      ]
+    },
+    {
+      "text": "鸡蛋",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/鸡蛋.mp3",
+      "rect": [
+        0.1331,
+        0.5733,
+        0.0967,
+        0.0354
+      ]
+    },
+    {
+      "text": "西瓜",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/西瓜.mp3",
+      "rect": [
+        0.1781,
+        0.7273,
+        0.0967,
+        0.0364
+      ]
+    },
+    {
+      "text": "购物车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/购物车.mp3",
+      "rect": [
+        0.6351,
+        0.6873,
+        0.1498,
+        0.0354
+      ]
+    },
+    {
+      "text": "收银台",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/收银台.mp3",
+      "rect": [
+        0.3421,
+        0.8843,
+        0.1487,
+        0.0354
+      ]
+    },
+    {
+      "text": "蔬菜",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/蔬菜.mp3",
+      "rect": [
+        0.7051,
+        0.8843,
+        0.0978,
+        0.0354
+      ]
+    },
+    {
+      "text": "冰箱",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/冰箱.mp3",
+      "rect": [
+        0.8311,
+        0.3343,
+        0.0967,
+        0.0354
+      ]
+    }
+  ],
+  "haidi": [
+    {
+      "text": "海豚",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/海豚.mp3",
+      "rect": [
+        0.1609,
+        0.3437,
+        0.1082,
+        0.0655
+      ]
+    },
+    {
+      "text": "珊瑚",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/珊瑚.mp3",
+      "rect": [
+        0.0731,
+        0.5478,
+        0.1518,
+        0.0645
+      ]
+    },
+    {
+      "text": "小丑鱼",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小丑鱼.mp3",
+      "rect": [
+        0.0731,
+        0.6818,
+        0.1518,
+        0.0645
+      ]
+    },
+    {
+      "text": "海星",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/海星.mp3",
+      "rect": [
+        0.3848,
+        0.7507,
+        0.1123,
+        0.0655
+      ]
+    },
+    {
+      "text": "贝壳",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/贝壳.mp3",
+      "rect": [
+        0.2338,
+        0.8637,
+        0.1134,
+        0.0655
+      ]
+    },
+    {
+      "text": "鲨鱼",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/鲨鱼.mp3",
+      "rect": [
+        0.7918,
+        0.4327,
+        0.1123,
+        0.0655
+      ]
+    },
+    {
+      "text": "潜水眼镜",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/潜水眼镜.mp3",
+      "rect": [
+        0.7503,
+        0.7527,
+        0.1914,
+        0.0655
+      ]
+    },
+    {
+      "text": "气泡",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/气泡.mp3",
+      "rect": [
+        0.7299,
+        0.8757,
+        0.1092,
+        0.0655
+      ]
+    }
+  ],
+  "jiedao": [
+    {
+      "text": "书店",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/书店.mp3",
+      "rect": [
+        0.1443,
+        0.4341,
+        0.0874,
+        0.0447
+      ]
+    },
+    {
+      "text": "公交车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/公交车.mp3",
+      "rect": [
+        0.2776,
+        0.4481,
+        0.1269,
+        0.0468
+      ]
+    },
+    {
+      "text": "路灯",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/路灯.mp3",
+      "rect": [
+        0.5026,
+        0.4121,
+        0.0707,
+        0.0468
+      ]
+    },
+    {
+      "text": "小汽车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小汽车.mp3",
+      "rect": [
+        0.2359,
+        0.6421,
+        0.1092,
+        0.0468
+      ]
+    },
+    {
+      "text": "面包",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/面包.mp3",
+      "rect": [
+        0.8546,
+        0.5291,
+        0.0749,
+        0.0458
+      ]
+    },
+    {
+      "text": "书包",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/书包.mp3",
+      "rect": [
+        0.5546,
+        0.8751,
+        0.0707,
+        0.0447
+      ]
+    },
+    {
+      "text": "自行车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/自行车.mp3",
+      "rect": [
+        0.7289,
+        0.8821,
+        0.1082,
+        0.0458
+      ]
+    },
+    {
+      "text": "花坛",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/花坛.mp3",
+      "rect": [
+        0.3096,
+        0.8961,
+        0.0718,
+        0.0447
+      ]
+    }
+  ],
+  "lvxing": [
+    {
+      "text": "交通灯",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/交通灯.mp3",
+      "rect": [
+        0.0927,
+        0.4559,
+        0.1706,
+        0.0582
+      ]
+    },
+    {
+      "text": "公共汽车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/公共汽车.mp3",
+      "rect": [
+        0.4643,
+        0.4068,
+        0.1903,
+        0.0614
+      ]
+    },
+    {
+      "text": "路牌",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/路牌.mp3",
+      "rect": [
+        0.5419,
+        0.5288,
+        0.1622,
+        0.0603
+      ]
+    },
+    {
+      "text": "火车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/火车.mp3",
+      "rect": [
+        0.7734,
+        0.5208,
+        0.1862,
+        0.0603
+      ]
+    },
+    {
+      "text": "汽车",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/汽车.mp3",
+      "rect": [
+        0.0708,
+        0.6908,
+        0.1664,
+        0.0603
+      ]
+    },
+    {
+      "text": "铁轨",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/铁轨.mp3",
+      "rect": [
+        0.0534,
+        0.7898,
+        0.1893,
+        0.0603
+      ]
+    },
+    {
+      "text": "道路",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/道路.mp3",
+      "rect": [
+        0.4927,
+        0.8878,
+        0.1695,
+        0.0614
+      ]
+    },
+    {
+      "text": "飞机",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/飞机.mp3",
+      "rect": [
+        0.5561,
+        0.2768,
+        0.1518,
+        0.0603
+      ]
+    },
+    {
+      "text": "轮船",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/轮船.mp3",
+      "rect": [
+        0.7589,
+        0.2788,
+        0.1612,
+        0.0603
+      ]
+    },
+    {
+      "text": "海浪",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/海浪.mp3",
+      "rect": [
+        0.7827,
+        0.7108,
+        0.1737,
+        0.0603
+      ]
+    }
+  ],
+  "wodejia": [
+    {
+      "text": "钟表",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/钟表.mp3",
+      "rect": [
+        0.5215,
+        0.3484,
+        0.0801,
+        0.0333
+      ]
+    },
+    {
+      "text": "台灯",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/台灯.mp3",
+      "rect": [
+        0.6036,
+        0.4593,
+        0.0749,
+        0.0343
+      ]
+    },
+    {
+      "text": "电视机",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/电视机.mp3",
+      "rect": [
+        0.2627,
+        0.5624,
+        0.1175,
+        0.0333
+      ]
+    },
+    {
+      "text": "茶几",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/茶几.mp3",
+      "rect": [
+        0.1146,
+        0.7114,
+        0.0749,
+        0.0333
+      ]
+    },
+    {
+      "text": "娃娃",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/娃娃.mp3",
+      "rect": [
+        0.8235,
+        0.5784,
+        0.0801,
+        0.0333
+      ]
+    },
+    {
+      "text": "小狗",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小狗.mp3",
+      "rect": [
+        0.8285,
+        0.7244,
+        0.078,
+        0.0333
+      ]
+    },
+    {
+      "text": "苹果",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/苹果.mp3",
+      "rect": [
+        0.4065,
+        0.8734,
+        0.077,
+        0.0333
+      ]
+    },
+    {
+      "text": "水杯",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/水杯.mp3",
+      "rect": [
+        0.7155,
+        0.8723,
+        0.0759,
+        0.0343
+      ]
+    }
+  ],
+  "xuetian": [
+    {
+      "text": "雪花 xuě huā",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/雪花 xuě huā.mp3",
+      "rect": [
+        0.275,
+        0.3146,
+        0.209,
+        0.0707
+      ]
+    },
+    {
+      "text": "冰柱 bīng zhù",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/冰柱 bīng zhù.mp3",
+      "rect": [
+        0.731,
+        0.3127,
+        0.209,
+        0.0686
+      ]
+    },
+    {
+      "text": "松鼠 sōng shǔ",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/松鼠 sōng shǔ.mp3",
+      "rect": [
+        0.1799,
+        0.337,
+        0.1591,
+        0.1061
+      ]
+    },
+    {
+      "text": "房屋 fáng wū",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/房屋 fáng wū.mp3",
+      "rect": [
+        0.547,
+        0.4556,
+        0.2101,
+        0.0718
+      ]
+    },
+    {
+      "text": "雪人 xuě rén",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/雪人 xuě rén.mp3",
+      "rect": [
+        0.2222,
+        0.5006,
+        0.1976,
+        0.0738
+      ]
+    },
+    {
+      "text": "雪橇 xuě qiāo",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/雪橇 xuě qiāo.mp3",
+      "rect": [
+        0.2391,
+        0.6746,
+        0.2007,
+        0.0728
+      ]
+    },
+    {
+      "text": "围巾 wéi jīn",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/围巾 wéi jīn.mp3",
+      "rect": [
+        0.4874,
+        0.6756,
+        0.1352,
+        0.0728
+      ]
+    },
+    {
+      "text": "手套 shǒu tào",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/手套 shǒu tào.mp3",
+      "rect": [
+        0.0813,
+        0.8945,
+        0.1914,
+        0.078
+      ]
+    },
+    {
+      "text": "毛线帽 máo xiàn mào",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/毛线帽 máo xiàn mào.mp3",
+      "rect": [
+        0.3122,
+        0.8935,
+        0.1976,
+        0.079
+      ]
+    },
+    {
+      "text": "雪球 xuě qiú",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/雪球 xuě qiú.mp3",
+      "rect": [
+        0.6193,
+        0.8876,
+        0.1924,
+        0.0707
+      ]
+    }
+  ],
+  "yecan": [
+    {
+      "text": "《春日野餐》识字小报",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/《春日野餐》识字小报.mp3",
+      "rect": [
+        0.109,
+        0.0903,
+        0.7821,
+        0.2444
+      ]
+    },
+    {
+      "text": "大树",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/大树.mp3",
+      "rect": [
+        0.8297,
+        0.3646,
+        0.1206,
+        0.0718
+      ]
+    },
+    {
+      "text": "秋千",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/秋千.mp3",
+      "rect": [
+        0.7366,
+        0.5726,
+        0.1227,
+        0.0718
+      ]
+    },
+    {
+      "text": "牛奶",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/牛奶.mp3",
+      "rect": [
+        0.5976,
+        0.6096,
+        0.1227,
+        0.0718
+      ]
+    },
+    {
+      "text": "水果盘",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/水果盘.mp3",
+      "rect": [
+        0.4565,
+        0.7726,
+        0.1799,
+        0.0707
+      ]
+    },
+    {
+      "text": "碟子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/碟子.mp3",
+      "rect": [
+        0.7677,
+        0.7876,
+        0.1217,
+        0.0718
+      ]
+    },
+    {
+      "text": "飞盘",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/飞盘.mp3",
+      "rect": [
+        0.1196,
+        0.8566,
+        0.1248,
+        0.0718
+      ]
+    },
+    {
+      "text": "三明治",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/三明治.mp3",
+      "rect": [
+        0.0608,
+        0.6186,
+        0.1685,
+        0.0718
+      ]
+    },
+    {
+      "text": "篮子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/篮子.mp3",
+      "rect": [
+        0.2536,
+        0.5307,
+        0.1227,
+        0.0697
+      ]
+    },
+    {
+      "text": "大树",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/大树.mp3",
+      "rect": [
+        0.8338,
+        0.3698,
+        0.1134,
+        0.0624
+      ]
+    }
+  ],
+  "youeryuan": [
+    {
+      "text": "黑板",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/黑板.mp3",
+      "rect": [
+        0.0941,
+        0.4362,
+        0.1009,
+        0.0395
+      ]
+    },
+    {
+      "text": "小桌子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小桌子.mp3",
+      "rect": [
+        0.0651,
+        0.5292,
+        0.1518,
+        0.0395
+      ]
+    },
+    {
+      "text": "彩笔",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/彩笔.mp3",
+      "rect": [
+        0.389,
+        0.5272,
+        0.1019,
+        0.0395
+      ]
+    },
+    {
+      "text": "画报",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/画报.mp3",
+      "rect": [
+        0.475,
+        0.3813,
+        0.1019,
+        0.0385
+      ]
+    },
+    {
+      "text": "小花盆",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小花盆.mp3",
+      "rect": [
+        0.794,
+        0.3963,
+        0.155,
+        0.0374
+      ]
+    },
+    {
+      "text": "积木",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/积木.mp3",
+      "rect": [
+        0.5271,
+        0.7083,
+        0.0988,
+        0.0385
+      ]
+    },
+    {
+      "text": "书本",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/书本.mp3",
+      "rect": [
+        0.8361,
+        0.6693,
+        0.0998,
+        0.0374
+      ]
+    },
+    {
+      "text": "小朋友",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小朋友.mp3",
+      "rect": [
+        0.206,
+        0.9043,
+        0.156,
+        0.0385
+      ]
+    },
+    {
+      "text": "玩具箱",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/玩具箱.mp3",
+      "rect": [
+        0.6209,
+        0.9193,
+        0.1602,
+        0.0385
+      ]
+    }
+  ],
+  "zoo": [
+    {
+      "text": "大象",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/大象.mp3",
+      "rect": [
+        0.114,
+        0.3458,
+        0.1061,
+        0.0645
+      ]
+    },
+    {
+      "text": "长颈鹿",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/长颈鹿.mp3",
+      "rect": [
+        0.4671,
+        0.4336,
+        0.1529,
+        0.0707
+      ]
+    },
+    {
+      "text": "猴子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/猴子.mp3",
+      "rect": [
+        0.7679,
+        0.4286,
+        0.1113,
+        0.0707
+      ]
+    },
+    {
+      "text": "树",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/树.mp3",
+      "rect": [
+        0.9055,
+        0.5017,
+        0.078,
+        0.0697
+      ]
+    },
+    {
+      "text": "栅栏",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/栅栏.mp3",
+      "rect": [
+        0.4228,
+        0.6707,
+        0.1165,
+        0.0676
+      ]
+    },
+    {
+      "text": "香蕉",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/香蕉.mp3",
+      "rect": [
+        0.1815,
+        0.7107,
+        0.13,
+        0.0686
+      ]
+    },
+    {
+      "text": "小屋",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/小屋.mp3",
+      "rect": [
+        0.8389,
+        0.7487,
+        0.1113,
+        0.0686
+      ]
+    },
+    {
+      "text": "喂食桶",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/喂食桶.mp3",
+      "rect": [
+        0.087,
+        0.8717,
+        0.156,
+        0.0676
+      ]
+    },
+    {
+      "text": "胡萝卜",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/胡萝卜.mp3",
+      "rect": [
+        0.3261,
+        0.8947,
+        0.1518,
+        0.0697
+      ]
+    },
+    {
+      "text": "兔子",
+      "audio": "http://175.178.2.155/miniprogram_assets/assets/audio/兔子.mp3",
+      "rect": [
+        0.5738,
+        0.8947,
+        0.1123,
+        0.0697
+      ]
+    }
+  ]
+}

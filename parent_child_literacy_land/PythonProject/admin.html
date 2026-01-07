@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>识字伴读 - 管理后台</title>
+    <!-- 引入样式和库 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        body { background-color: #f5f7fa; margin: 0; padding: 20px; font-family: sans-serif; }
+        .card { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1); }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .img-preview { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2 style="margin-bottom: 30px;">🦁 亲子识字伴读 - 运营管理台</h2>
+
+        <!-- 用户管理 -->
+        <div class="card">
+            <div class="header">
+                <h3>用户列表 (User List)</h3>
+                <el-button type="primary" @click="fetchUsers" circle>↻</el-button>
+            </div>
+            <el-table :data="users" style="width: 100%" stripe>
+                <el-table-column prop="id" label="UID" width="80"></el-table-column>
+                <el-table-column label="头像" width="100">
+                    <template #default="scope">
+                        <img :src="scope.row.avatar_url || 'http://175.178.2.155/miniprogram_assets/assets/icons/user.png'" class="img-preview">
+                    </template>
+                </el-table-column>
+                <el-table-column prop="nickname" label="昵称"></el-table-column>
+                <el-table-column prop="created_at" label="注册时间"></el-table-column>
+                <el-table-column prop="last_login" label="最近登录"></el-table-column>
+            </el-table>
+        </div>
+
+        <!-- 场景管理 -->
+        <div class="card">
+            <div class="header">
+                <h3>场景列表 (Scenes)</h3>
+            </div>
+            <el-table :data="scenes" style="width: 100%" border>
+                <el-table-column prop="id" label="ID" width="60"></el-table-column>
+                <el-table-column label="封面" width="120">
+                    <template #default="scope">
+                        <img :src="scope.row.cover_url" class="img-preview">
+                    </template>
+                </el-table-column>
+                <el-table-column prop="title" label="标题" width="150"></el-table-column>
+                <el-table-column prop="description" label="描述"></el-table-column>
+                <el-table-column prop="sort_order" label="排序" width="80"></el-table-column>
+                <el-table-column label="操作" width="100">
+                    <template #default="scope">
+                        <el-button size="small" type="primary" plain>编辑</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref, onMounted } = Vue;
+        const app = createApp({
+            setup() {
+                const users = ref([]);
+                const scenes = ref([]);
+                // API地址
+                const API_BASE = 'http://175.178.2.155:8000/api';
+
+                // 获取用户
+                const fetchUsers = async () => {
+                    try {
+                        // 注意：这里需要我们在后端补一个 /api/users 接口
+                        const res = await axios.get(`${API_BASE}/users`);
+                        users.value = res.data;
+                    } catch (e) {
+                        console.error(e);
+                    }
+                };
+
+                // 获取场景
+                const fetchScenes = async () => {
+                    const res = await axios.get(`${API_BASE}/scenes`);
+                    scenes.value = res.data;
+                };
+
+                onMounted(() => {
+                    fetchUsers();
+                    fetchScenes();
+                });
+
+                return { users, scenes, fetchUsers };
+            }
+        });
+        app.use(ElementPlus);
+        app.mount('#app');
+    </script>
+</body>
+</html>

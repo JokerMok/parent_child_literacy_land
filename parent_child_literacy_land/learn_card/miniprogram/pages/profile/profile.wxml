@@ -1,0 +1,122 @@
+<view class="container">
+  <!-- 1. 头部用户信息区域 -->
+  <!-- 1. 头部用户信息区域 -->
+  <view class="header">
+    <view class="user-box">
+      <!-- A. 头像：未登录显示默认，已登录变成【选择头像按钮】 -->
+      <block wx:if="{{isLogin}}">
+        <button class="avatar-btn" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{userInfo.avatarUrl || 'http://175.178.2.155/miniprogram_assets/assets/icons/user.png'}}" mode="aspectFill"></image>
+        </button>
+      </block>
+      <block wx:else>
+        <image class="avatar" src="http://175.178.2.155/miniprogram_assets/assets/icons/user.png" mode="aspectFill" bindtap="handleLogin"></image>
+      </block>
+      
+      <view class="info">
+        <!-- B. 昵称：已登录变成【昵称输入框】 -->
+        <block wx:if="{{isLogin}}">
+          <input type="nickname" class="nickname-input" placeholder="请输入昵称" value="{{userInfo.nickName}}" bind:change="onNicknameChange" />
+          <!-- UID -->
+          <text class="uid">UID: {{uid}}</text>
+        </block>
+        
+        <block wx:else>
+          <text class="nickname" bindtap="handleLogin">点击登录账号</text>
+          <text class="tips">登录同步学习记录</text>
+        </block>
+      </view>
+      
+      <!-- 右侧箭头 -->
+      <view class="arrow" wx:if="{{!isLogin}}">></view>
+    </view>
+  </view>
+
+  <!-- 2. 学习数据统计 -->
+  <view class="stats-card">
+    <view class="stat-item">
+      <!-- 改成变量 {{stats.days}} -->
+      <text class="num">{{stats.days}}</text>
+      <text class="label">学习天数</text>
+    </view>
+    <view class="line"></view>
+    <view class="stat-item">
+      <!-- 改成变量 {{stats.words}} -->
+      <text class="num">{{stats.words}}</text>
+      <text class="label">认识单词</text>
+    </view>
+    <view class="line"></view>
+    <view class="stat-item">
+      <!-- 改成变量 {{stats.badges}} -->
+      <text class="num">{{stats.badges}}</text>
+      <text class="label">获得勋章</text>
+    </view>
+  </view>
+
+  <!-- 3. VIP状态卡片 -->
+  <view class="vip-card" bindtap="toVipCenter" wx:if="{{isLogin}}">
+    <view class="vip-header">
+      <text class="vip-title">会员状态</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="vip-content">
+      <text class="vip-status">{{vipInfo.isVip ? '👑 VIP会员' : '普通用户'}}</text>
+      <text class="vip-expire" wx:if="{{vipInfo.isVip}}">到期时间：{{vipInfo.expireTime}}</text>
+      <text class="vip-action">{{vipInfo.isVip ? '查看会员权益' : '立即开通会员'}}</text>
+    </view>
+  </view>
+
+  <!-- 4. 功能菜单列表 -->
+  <view class="menu-list">
+    <!-- 声音克隆功能入口 -->
+    <view class="menu-item" bindtap="toVoiceStudio" wx:if="{{isLogin}}">
+      <view class="item-left">
+        <text class="icon">🎙️</text>
+        <text class="text">声音克隆中心</text>
+      </view>
+      <block wx:if="{{voiceCloneInfo.hasClonedVoice}}">
+        <text class="voice-status">已克隆</text>
+        <text class="arrow">></text>
+      </block>
+      <block wx:else>
+        <text class="voice-status voice-status-new">立即克隆</text>
+        <text class="arrow">></text>
+      </block>
+    </view>
+
+    <view class="menu-item" bindtap="toMyCustom" wx:if="{{isLogin}}">
+      <view class="item-left">
+        <text class="icon">🖼️</text>
+        <text class="text">我的场景</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+
+    <button class="menu-item contact-btn" open-type="contact">
+      <view class="item-left">
+        <text class="icon">🎧</text>
+        <text class="text">联系客服 / 反馈</text>
+      </view>
+      <text class="arrow">></text>
+    </button>
+    
+    <view class="menu-item" bindtap="showVersion">
+      <view class="item-left"><text class="icon">ℹ️</text><text class="text">版本内容</text></view>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="showAgreement">
+      <view class="item-left"><text class="icon">📄</text><text class="text">用户协议</text></view>
+      <text class="arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="handleLogout" wx:if="{{isLogin}}">
+      <view class="item-left">
+        <text class="icon">🚪</text>
+        <text class="text">退出登录</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+  </view>
+  
+  <view class="footer">{{versionStr}}</view>
+</view>

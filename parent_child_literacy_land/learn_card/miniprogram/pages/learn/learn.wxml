@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- 1. 背景图片 -->
+  <image src="{{currentImage}}" class="background-image" mode="widthFix"></image>
+  
+  <!-- 2. 循环渲染点击区域 -->
+  <view 
+    wx:for="{{clickAreas}}" 
+    wx:key="index"
+    class="clickable-area"
+    hover-class="clicked-effect" 
+    hover-stay-time="100"
+    style="left: {{item.rect[0] * 100}}%; top: {{item.rect[1] * 100}}%; width: {{item.rect[2] * 100}}%; height: {{item.rect[3] * 100}}%;"
+    data-index="{{index}}"
+    bindtap="onAreaClick"
+  >
+    <!-- 标签文字容器 -->
+    <view class="label-tag">
+      <!-- 拼音 (如果有才显示) -->
+      <view class="pinyin" wx:if="{{item.pinyin}}">{{item.pinyin}}</view>
+      <!-- 汉字 -->
+      <view class="hanzi">{{item.text}}</view>
+    </view>
+  </view>
+</view>

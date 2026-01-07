@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 顶部：统计与上传 -->
+  <view class="header-card">
+    <view class="header-info">
+      <view class="h1">我的作品集</view>
+      <view class="p">共 {{myCards.length}} 张识字卡片</view>
+    </view>
+    <view class="upload-btn" bindtap="toCreate">
+      <text class="plus">+</text> 上传
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{myCards.length === 0}}">
+    <text>这里空空的，快去给宝宝做第一张卡片吧~</text>
+  </view>
+
+  <!-- 瀑布流列表 -->
+  <view class="grid-layout" wx:else>
+    <view class="grid-item" wx:for="{{myCards}}" wx:key="id">
+      <!-- 图片区域：点击进入学习 -->
+      <view class="img-wrapper" bindtap="toDetail" data-idx="{{index}}">
+        <image class="cover" src="{{item.image_url}}" mode="aspectFill"></image>
+        <view class="play-icon">▶</view>
+      </view>
+      
+      <!-- 底部操作区 -->
+      <view class="item-footer">
+        <!-- 点击名字修改 -->
+        <view class="item-name" catchtap="editName" data-id="{{item.id}}" data-name="{{item.name}}">
+          {{item.name}} <text class="edit-icon">✎</text>
+        </view>
+        <view class="action-btn edit-btn" catchtap="toEdit" data-item="{{item}}">🛠️</view>
+        <!-- 删除按钮 -->
+        <view class="delete-icon" catchtap="deleteCard" data-id="{{item.id}}">🗑️</view>
+      </view>
+    </view>
+  </view>
+</view>

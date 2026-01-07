@@ -1,0 +1,286 @@
+/* pages/profile/profile.wxss */
+
+/* 全局设置 */
+page {
+  background-color: #F5F7FA; /* 页面底色为浅灰，作为模块间的缝隙颜色 */
+  box-sizing: border-box;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0;
+  width: 100%;
+}
+
+/* -------------------------------------------
+   1. 头部区域：通栏黄色
+------------------------------------------- */
+.header {
+  width: 100%;
+  background-color: #FFD700;
+  /* 去掉底部的大padding，不需要给卡片留位置了 */
+  padding: 40rpx 40rpx 60rpx 40rpx; 
+  /* 去掉圆角，变成直角的长方形 */
+  border-radius: 0; 
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fff;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+.info {
+  margin-left: 30rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nickname {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.uid {
+  font-size: 24rpx;
+  color: #555;
+  background: rgba(255,255,255,0.6);
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  align-self: flex-start;
+}
+
+.tips {
+  font-size: 28rpx;
+  color: #444;
+}
+
+.arrow {
+  font-size: 32rpx;
+  color: #333;
+  opacity: 0.5;
+}
+
+/* -------------------------------------------
+   2. 统计区域：通栏白色
+------------------------------------------- */
+.stats-card {
+  width: 100%;
+  background: #fff;
+  
+  /* 【关键修改】：
+     1. 去掉负边距（不再重叠）
+     2. 去掉左右margin（通栏）
+     3. 去掉圆角
+  */
+  margin: 0; 
+  border-radius: 0;
+  padding: 40rpx 0;
+  
+  /* 为了和下面的菜单区分开，底部留一点距离，露出灰色的背景 */
+  margin-bottom: 20rpx; 
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.num {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #333;
+}
+
+.label {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.line {
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #eee;
+}
+
+/* -------------------------------------------
+   3. 菜单区域：通栏白色
+------------------------------------------- */
+.menu-list {
+  width: 100%;
+  background: #fff;
+  
+  /* 通栏设置 */
+  margin: 0;
+  border-radius: 0;
+  padding: 0 40rpx; /* 内容左右留白，但背景是通栏的 */
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110rpx;
+  border-bottom: 2rpx solid #f8f8f8;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+/* 按钮样式重置 */
+button.contact-btn {
+  background: transparent;
+  line-height: normal;
+  border: none;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  border-radius: 0;
+}
+button.contact-btn::after {
+  border: none;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.item-left .icon {
+  margin-right: 24rpx;
+  font-size: 38rpx;
+  width: 50rpx;
+  text-align: center;
+}
+
+.item-left .text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.menu-item .arrow {
+  color: #ccc;
+  font-size: 30rpx;
+}
+
+.footer {
+  text-align: center;
+  color: #ccc;
+  font-size: 22rpx;
+  margin-top: 60rpx;
+  padding-bottom: 60rpx;
+}
+/* 头像按钮：去掉默认背景和边框 */
+.avatar-btn {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  line-height: normal;
+  border-radius: 50%;
+  width: 130rpx;
+  height: 130rpx;
+}
+.avatar-btn::after { border: none; }
+
+/* 昵称输入框 */
+.nickname-input {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12rpx;
+  height: 60rpx;
+  border-bottom: 1px dashed rgba(0,0,0,0.1); /* 加个虚线提示可以改 */
+}
+
+/* VIP状态卡片样式 */
+.vip-card {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  border-radius: 20rpx;
+  padding: 30rpx 40rpx;
+  margin: 20rpx 0;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.vip-card:active {
+  transform: scale(0.98);
+}
+
+.vip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.vip-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.vip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.vip-status {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1rpx 1rpx 2rpx rgba(0, 0, 0, 0.2);
+}
+
+.vip-expire {
+  font-size: 24rpx;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.vip-action {
+  font-size: 26rpx;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8rpx 16rpx;
+  border-radius: 16rpx;
+  align-self: flex-start;
+  margin-top: 10rpx;
+}
+
+/* 声音克隆状态样式 */
+.voice-status {
+  font-size: 24rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+
+.voice-status-new {
+  color: #ff4d4f;
+  font-weight: bold;
+}

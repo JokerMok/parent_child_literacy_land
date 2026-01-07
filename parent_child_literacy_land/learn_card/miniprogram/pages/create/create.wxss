@@ -1,0 +1,100 @@
+page { background-color: #1a1a1a; }
+.container { padding-bottom: 140rpx; }
+
+/* 画布 */
+.canvas-area {
+  width: 100%;
+  min-height: 60vh; /* 没图的时候给个高度 */
+  background: #333;
+  overflow: hidden;
+  position: relative;
+}
+.bg-img { width: 100%; display: block; }
+
+/* 提示文案 */
+.placeholder-box {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center;
+  color: #666; font-size: 28rpx;
+}
+
+/* 红框变黄框，加背景色，像一个贴纸 */
+.rect-box {
+  border: 4rpx solid #FFD700; /* 金色边框 */
+  background: rgba(255, 215, 0, 0.15); /* 淡淡的金色背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.2); /* 加点阴影更立体 */
+}
+
+/* 标签文字增强 */
+.tag-group {
+  background: rgba(0, 0, 0, 0.7); /* 深黑背景 */
+  padding: 8rpx 16rpx;
+  border-radius: 30rpx; /* 圆角更大 */
+  text-align: center;
+  border: 2rpx solid #fff; /* 白边 */
+}
+
+.pinyin {
+  font-size: 20rpx;
+  color: #FFD700;
+  margin-bottom: 2rpx;
+  font-weight: bold;
+}
+
+.hanzi {
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 🔥 删除按钮：红色圆形，定位在右上角 */
+.del-btn {
+  position: absolute;
+  top: -18rpx;
+  right: -18rpx;
+  width: 36rpx;
+  height: 36rpx;
+  background: #ff4d4f;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  border: 2rpx solid #fff; /* 加个白边更清晰 */
+  z-index: 99;
+}
+
+/* 底部栏 */
+.footer-bar {
+  position: fixed; bottom: 0; left: 0; width: 100%; height: 120rpx;
+  background: #fff; box-shadow: 0 -4rpx 16rpx rgba(0,0,0,0.1);
+  display: flex; align-items: center; padding: 0 40rpx; box-sizing: border-box;
+  z-index: 100;
+  justify-content: space-between; /* 默认两端对齐 */
+}
+
+/* 居中大按钮 (未上传状态) */
+.center-action {
+  width: 100%; display: flex; justify-content: center;
+}
+.upload-btn-large {
+  background: #FFD700; color: #333; font-weight: bold; font-size: 32rpx;
+  padding: 20rpx 80rpx; border-radius: 60rpx;
+  box-shadow: 0 6rpx 16rpx rgba(255, 215, 0, 0.4);
+}
+
+/* 左右按钮 (已上传状态) */
+.text-btn { font-size: 30rpx; color: #666; padding: 20rpx; }
+.save-btn {
+  background: #07c160; color: #fff; font-size: 30rpx; font-weight: bold;
+  padding: 16rpx 40rpx; border-radius: 10rpx;
+}
+
+.input { background: #f5f5f5; padding: 20rpx; margin-top: 20rpx; border-radius: 8rpx; }

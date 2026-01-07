@@ -1,0 +1,50 @@
+/* pages/category/category.wxss */
+
+/* 1. 列表容器：开启 Flex 布局，允许换行 */
+.list-container {
+  padding: 30rpx; /* 页面四周留白 */
+  display: flex;
+  flex-wrap: wrap; /* 关键：允许换行 */
+  justify-content: space-between; /* 关键：左右分散对齐 */
+}
+
+/* 2. 单个卡片：宽度设为 48%，这样一行就能放两个 */
+.card {
+  width: 48%; 
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx; /* 上下卡片的间距 */
+  overflow: hidden;     /* 圆角裁切 */
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08); /* 加点阴影更立体 */
+  position: relative;
+}
+
+/* 3. 图片：固定高度，保证整齐 */
+.cover {
+  width: 100%;
+  height: 220rpx; /* 固定高度，防止长短不一 */
+  display: block;
+}
+
+/* 4. 文字区域 */
+.info {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.h1 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.desc {
+  font-size: 24rpx;
+  color: #999;
+  /* 超过一行自动省略号 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
