@@ -9,12 +9,17 @@ Page({
   },
 
   fetchData: function() {
-    const uid = wx.getStorageSync('user_uid') || 0;
+    const uid = wx.getStorageSync('user_uid');
     wx.showLoading({ title: '加载中...' });
     
+    // 根据是否登录构建请求URL
+    let url = 'http://175.178.2.155/api/scenes';
+    if (uid) {
+      url += `?uid=${uid}`;
+    }
+    
     wx.request({
-      // 注意：这里是反引号 ` 
-      url: `http://175.178.2.155/api/scenes?uid=${uid}`,
+      url: url,
       method: 'GET',
       success: (res) => {
         console.log("✅ 场景列表加载成功:", res.data);

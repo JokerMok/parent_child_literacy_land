@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
 import json
+import time
 from typing import List, Optional
 
 from app.db.session import get_db
@@ -214,3 +215,73 @@ async def batch_update_hotspots(
     db.commit()
     
     return {"message": "批量更新成功", "updated_count": updated_count}
+
+# 用户创建卡片
+@router.post("/user/create_card")
+async def create_user_card(
+    uid: int,
+    scene_title: str,
+    image_url: str,
+    hotspots: List[HotspotCreate],
+    db: Session = Depends(get_db)
+):
+    """用户创建卡片"""
+    try:
+        # 创建卡片
+        new_card = Card(
+            scene_id=1,  # 默认场景ID
+            card_key=f"user_{uid}_{int(time.time())}",
+            image_url=image_url,
+            name=scene_title,
+            status=1  # 直接通过审核
+        )
+        db.add(new_card)
+        db.commit()
+        db.refresh(new_card)
+        
+        # 保存热区数据
+        for hotspot_item in hotspots:
+            rect_json = json.dumps(hotspot_item.rect)
+            db_hotspot = Hotspot(
+                card_id=new_card.id,
+                text=hotspot_item.text,
+                pinyin=hotspot_item.pinyin,
+                audio_url=hotspot_item.audio_url,
+                rect_json=rect_json
+            )
+            db.add(db_hotspot)
+        
+        db.commit()
+        
+        return {
+            "code": 200,
+            "message": "卡片创建成功",
+            "data": {
+                "card_id": new_card.id,
+                "card_key": new_card.card_key,
+                "image_url": new_card.image_url
+            }
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"创建卡片失败: {str(e)}")
+
+# 更新卡片名称
+@router.post("/update_name")
+async def update_card_name(
+    id: int,
+    name: str,
+    db: Session = Depends(get_db)
+):
+    """更新卡片名称"""
+    card = db.query(Card).filter(Card.id == id).first()
+    if not card:
+        raise HTTPException(status_code=404, detail="卡片不存在")
+    
+    card.name = name
+    db.commit()
+    db.refresh(card)
+    
+    return {
+        "code": 200,
+        "message": "名称更新成功"
+    }

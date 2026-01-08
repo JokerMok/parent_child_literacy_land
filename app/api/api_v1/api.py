@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.api_v1.endpoints import auth, voice, tts, security, vip, scene, card
+from app.api.api_v1.endpoints import auth, voice, tts, security, vip, scene, card, config, upload, admin, system
 
 api_router = APIRouter()
 
@@ -19,7 +19,19 @@ api_router.include_router(security.router, prefix="/security", tags=["内容安�
 api_router.include_router(vip.router, prefix="/vip", tags=["会员服务"])
 
 # 场景相关路由
-api_router.include_router(scene.router, prefix="/scene", tags=["场景管理"])
+api_router.include_router(scene.router, prefix="/scenes", tags=["场景管理"])
 
 # 卡片相关路由
 api_router.include_router(card.router, prefix="/card", tags=["卡片管理"])
+
+# 配置相关路由
+api_router.include_router(config.router, prefix="/config", tags=["配置管理"])
+
+# 上传相关路由
+api_router.include_router(upload.router, prefix="/upload", tags=["上传管理"])
+
+# 管理员相关路由
+api_router.include_router(admin.router, prefix="/admin", tags=["管理员管理"])
+
+# 系统相关路由
+api_router.include_router(system.router, prefix="/system", tags=["系统管理"])

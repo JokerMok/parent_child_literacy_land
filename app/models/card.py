@@ -8,6 +8,7 @@ class Card(Base):
     
     id = Column(Integer, primary_key=True, index=True, autoincrement=True, comment="卡片ID")
     scene_id = Column(Integer, ForeignKey("t_scenes.id", ondelete="CASCADE"), nullable=False, index=True, comment="所属场景ID")
+    card_key = Column(String(100), nullable=True, unique=True, index=True, comment="卡片唯一标识")
     image_url = Column(String(255), nullable=False, comment="卡片图片URL")
     name = Column(String(50), nullable=False, default="", comment="卡片名称")
     status = Column(Integer, nullable=False, default=0, index=True, comment="状态: 0-待审核, 1-已通过, 2-已拒绝")
