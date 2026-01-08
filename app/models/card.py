@@ -11,7 +11,7 @@ class Card(Base):
     card_key = Column(String(100), nullable=True, unique=True, index=True, comment="卡片唯一标识")
     image_url = Column(String(255), nullable=False, comment="卡片图片URL")
     name = Column(String(50), nullable=False, default="", comment="卡片名称")
-    status = Column(Integer, nullable=False, default=0, index=True, comment="状态: 0-待审核, 1-已通过, 2-已拒绝")
+    status = Column(Integer, nullable=False, default=1, index=True, comment="状态: 0-待审核, 1-已通过, 2-已拒绝")
     created_at = Column(DateTime, nullable=False, default=func.now(), comment="创建时间")
     updated_at = Column(DateTime, nullable=False, default=func.now(), onupdate=func.now(), comment="更新时间")
     

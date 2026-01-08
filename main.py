@@ -5,11 +5,7 @@ from typing import Any
 
 # 导入自定义模块
 from app.core.config import settings
-from app.db.session import engine, Base
 from app.api.api_v1.api import api_router
-
-# 创建数据库表
-Base.metadata.create_all(bind=engine)
 
 # 创建FastAPI应用
 app = FastAPI(
@@ -28,6 +24,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 尝试创建数据库表
+try:
+    from app.db.session import engine, Base
+    Base.metadata.create_all(bind=engine)
+    print("数据库表创建成功")
+except Exception as e:
+    print(f"数据库表创建失败: {e}")
+    print("API服务将继续运行，但无法处理需要数据库的请求")
 
 # 包含API路由
 app.include_router(api_router, prefix=settings.API_V1_STR)
