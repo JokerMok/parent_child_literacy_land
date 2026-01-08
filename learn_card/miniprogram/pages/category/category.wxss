@@ -1,50 +1,112 @@
 /* pages/category/category.wxss */
 
-/* 1. 列表容器：开启 Flex 布局，允许换行 */
+/* 1. 页面背景色 */
+page {
+  background-color: #f5f7fa;
+}
+
+/* 2. 列表容器：开启 Flex 布局，允许换行 */
 .list-container {
-  padding: 30rpx; /* 页面四周留白 */
-  display: flex;
-  flex-wrap: wrap; /* 关键：允许换行 */
-  justify-content: space-between; /* 关键：左右分散对齐 */
-}
-
-/* 2. 单个卡片：宽度设为 48%，这样一行就能放两个 */
-.card {
-  width: 48%; 
-  background-color: #fff;
-  border-radius: 20rpx;
-  margin-bottom: 30rpx; /* 上下卡片的间距 */
-  overflow: hidden;     /* 圆角裁切 */
-  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08); /* 加点阴影更立体 */
-  position: relative;
-}
-
-/* 3. 图片：固定高度，保证整齐 */
-.cover {
-  width: 100%;
-  height: 220rpx; /* 固定高度，防止长短不一 */
-  display: block;
-}
-
-/* 4. 文字区域 */
-.info {
   padding: 20rpx;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20rpx;
+}
+
+/* 3. 单个卡片：宽度设为 48%，这样一行就能放两个 */
+.card {
+  width: 45%;
+  background-color: #fff;
+  border-radius: 24rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+/* 4. 卡片悬停效果 */
+.card:active {
+  transform: translateY(-8rpx);
+  box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.15);
+}
+
+/* 5. 图片：固定高度，保证整齐 */
+.cover {
+  width: 100%;
+  height: 240rpx;
+  display: block;
+  border-radius: 24rpx 24rpx 0 0;
+  transition: transform 0.3s ease;
+}
+
+/* 6. 图片悬停效果 */
+.card:active .cover {
+  transform: scale(1.05);
+}
+
+/* 7. 文字区域 */
+.info {
+  padding: 24rpx;
+  display: flex;
   flex-direction: column;
+  gap: 8rpx;
 }
 
+/* 8. 标题样式 */
 .h1 {
-  font-size: 32rpx;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8rpx;
-}
-
-.desc {
-  font-size: 24rpx;
-  color: #999;
-  /* 超过一行自动省略号 */
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 9. 描述样式 */
+.desc {
+  font-size: 26rpx;
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 10. 添加渐变叠加层 */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* 11. 为卡片添加底部装饰条 */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:active::after {
+  opacity: 1;
 }

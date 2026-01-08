@@ -6,7 +6,7 @@
       <!-- A. 头像：未登录显示默认，已登录变成【选择头像按钮】 -->
       <block wx:if="{{isLogin}}">
         <button class="avatar-btn" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl || 'http://175.178.2.155/miniprogram_assets/assets/icons/user.png'}}" mode="aspectFill"></image>
+          <image class="avatar" src="{{(userInfo && userInfo.avatarUrl) || 'http://175.178.2.155/miniprogram_assets/assets/icons/user.png'}}"></image>
         </button>
       </block>
       <block wx:else>
@@ -16,7 +16,7 @@
       <view class="info">
         <!-- B. 昵称：已登录变成【昵称输入框】 -->
         <block wx:if="{{isLogin}}">
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" value="{{userInfo.nickName}}" bind:change="onNicknameChange" />
+          <input type="nickname" class="nickname-input" placeholder="请输入昵称" value="{{(userInfo && userInfo.nickName) || ''}}" bind:change="onNicknameChange" />
           <!-- UID -->
           <text class="uid">UID: {{uid}}</text>
         </block>
