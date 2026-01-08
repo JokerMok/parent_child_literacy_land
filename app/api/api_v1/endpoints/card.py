@@ -285,3 +285,22 @@ async def update_card_name(
         "code": 200,
         "message": "名称更新成功"
     }
+
+# 删除卡片（匹配小程序请求路径）
+@router.post("/delete")
+async def delete_card_by_post(
+    id: int,
+    db: Session = Depends(get_db)
+):
+    """删除卡片（POST请求，匹配小程序）"""
+    card = db.query(Card).filter(Card.id == id).first()
+    if not card:
+        raise HTTPException(status_code=404, detail="卡片不存在")
+    
+    db.delete(card)
+    db.commit()
+    
+    return {
+        "code": 200,
+        "message": "卡片删除成功"
+    }
