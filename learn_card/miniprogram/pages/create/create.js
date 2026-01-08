@@ -38,7 +38,7 @@ Page({
   fetchHotspots(cardKey) {
     wx.showLoading({ title: '加载数据...' });
     wx.request({
-      url: `http://175.178.2.155:8000/api/config/${cardKey}`,
+      url: `http://175.178.2.155/api/config/${cardKey}`,
       success: (res) => {
         if (res.data && Array.isArray(res.data)) {
           this.setData({ hotspots: res.data });
@@ -76,7 +76,7 @@ Page({
     
     // A. 上传
     wx.uploadFile({
-      url: 'http://175.178.2.155:8000/api/upload', 
+      url: 'http://175.178.2.155/api/upload', 
       filePath: filePath,
       name: 'file',
       success: (res) => {
@@ -88,7 +88,7 @@ Page({
             
             // B. 分析
             wx.request({
-              url: 'http://175.178.2.155:8000/api/analyze',
+              url: 'http://175.178.2.155/api/analyze',
               method: 'POST',
               data: { image_url: serverUrl },
               success: (aiRes) => {
@@ -201,7 +201,7 @@ Page({
     if (this.data.isEditMode) {
       // 🟢 分支 A：编辑模式 -> 调用更新接口 (只更新热区)
       wx.request({
-        url: 'http://175.178.2.155:8000/api/admin/save_hotspots',
+        url: 'http://175.178.2.155/api/admin/save_hotspots',
         method: 'POST',
         data: {
           card_key: this.data.cardKey,
@@ -225,7 +225,7 @@ Page({
     } else {
       // 🔵 分支 B：新建模式 -> 调用创建接口
       wx.request({
-        url: 'http://175.178.2.155:8000/api/user/create_card',
+        url: 'http://175.178.2.155/api/user/create_card',
         method: 'POST',
         data: {
           uid: uid,

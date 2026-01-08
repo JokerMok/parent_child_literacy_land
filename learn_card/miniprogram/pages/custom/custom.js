@@ -9,7 +9,7 @@ Page({
     const uid = wx.getStorageSync('user_uid');
     if (!uid) return;
     wx.request({
-      url: `http://175.178.2.155:8000/api/scenes?uid=${uid}`,
+      url: `http://175.178.2.155/api/scenes?uid=${uid}`,
       success: (res) => {
         if (res.data) {
           const myScene = res.data.find(item => item.user_id == uid);
@@ -35,7 +35,7 @@ Page({
         if (res.confirm && res.content) {
           // 调用后端接口
           wx.request({
-            url: 'http://175.178.2.155:8000/api/card/update_name',
+            url: 'http://175.178.2.155/api/card/update_name',
             method: 'POST',
             data: { id: id, name: res.content },
             success: () => {
@@ -58,7 +58,7 @@ Page({
       success: (res) => {
         if (res.confirm) {
           wx.request({
-            url: 'http://175.178.2.155:8000/api/card/delete',
+            url: 'http://175.178.2.155/api/card/delete',
             method: 'POST',
             data: { id: id },
             success: () => {

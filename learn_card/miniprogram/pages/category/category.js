@@ -14,7 +14,7 @@ Page({
     
     wx.request({
       // 注意：这里是反引号 ` 
-      url: `http://175.178.2.155:8000/api/scenes?uid=${uid}`,
+      url: `http://175.178.2.155/api/scenes?uid=${uid}`,
       method: 'GET',
       success: (res) => {
         console.log("✅ 场景列表加载成功:", res.data);

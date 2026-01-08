@@ -26,7 +26,7 @@ Page({
     // 检查是否有缓存（可选优化），这里MVP直接每次请求
     wx.request({
       // 指向服务器上的那个 JSON 文件
-      url: 'http://175.178.2.155:8000/api/config/' + sceneKey, 
+      url: 'http://175.178.2.155/api/config/' + sceneKey, 
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200 && res.data) {

@@ -4,7 +4,7 @@ Page({
 
     // 1. 先去服务器拿数据
     wx.request({
-      url: 'http://175.178.2.155:8000/api/scenes',
+      url: 'http://175.178.2.155/api/scenes',
       success: (res) => {
         if (res.statusCode === 200 && res.data) {
           const sceneList = res.data;

@@ -43,7 +43,7 @@ Page({
 
       // 2. 这里的关键：去服务器拿最新的（包括统计数据）
       wx.request({
-        url: 'http://175.178.2.155:8000/api/user/' + localUid,
+        url: 'http://175.178.2.155/api/user/' + localUid,
         method: 'GET',
         success: (res) => {
           if (res.data.uid) {
@@ -96,7 +96,7 @@ Page({
                 success: (resLogin) => {
                     if (resLogin.code) {
                         wx.request({
-                            url: 'http://175.178.2.155:8000/api/login',
+                            url: 'http://175.178.2.155/api/login',
                             method: 'POST',
                             data: { code: resLogin.code, userInfo: userInfo },
                             success: (apiRes) => {
@@ -144,7 +144,7 @@ Page({
     if (!uid) return;
 
     wx.request({
-      url: 'http://175.178.2.155:8000/api/user/update',
+      url: 'http://175.178.2.155/api/user/update',
       method: 'POST',
       data: {
         uid: uid,
@@ -183,7 +183,7 @@ Page({
   fetchConfigAndShow(key, title) {
     wx.showLoading();
     wx.request({
-      url: 'http://175.178.2.155:8000/api/system/config',
+      url: 'http://175.178.2.155/api/system/config',
       success: (res) => {
         const content = res.data[key] || '暂无内容';
         wx.showModal({
@@ -202,7 +202,7 @@ Page({
 
   fetchSystemVersion() {
     wx.request({
-      url: 'http://175.178.2.155:8000/api/system/config',
+      url: 'http://175.178.2.155/api/system/config',
       success: (res) => {
         if (res.data && res.data.version_number) {
           this.setData({
